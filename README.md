@@ -1,4 +1,4 @@
-# smart_vitans
+# smart_vitals
 
 A new Flutter project.
 
