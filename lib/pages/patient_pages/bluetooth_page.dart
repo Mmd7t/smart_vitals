@@ -68,7 +68,9 @@ class _BluetoothPageState extends State<BluetoothPage> {
                 onPressed: () async {
                   flutterBlue.stopScan();
                   try {
-                    await device.connect();
+                    await device
+                        .connect()
+                        .then((value) => print('Ay 7agaaaaaaaaaaa'));
                   } catch (e) {
                     if (e.code != 'already_connected') {
                       throw e;
