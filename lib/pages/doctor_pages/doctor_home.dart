@@ -4,6 +4,7 @@ import 'package:smart_vitans/widgets/GradientBox.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 
 import '../../themes.dart';
+import 'dr_services.dart';
 
 class DoctorHome extends StatefulWidget {
   @override
@@ -95,8 +96,8 @@ class _DoctorHomeState extends State<DoctorHome> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigator.of(context)
-          //     .push(MaterialPageRoute(builder: (context) => DrServicies()));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => DrServicies()));
         },
         child: const Icon(Icons.home_repair_service),
       ),

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:smart_vitans/pages/common_pages/addservicies.dart';
+import 'package:smart_vitans/pages/common_pages/partner_n_patient/ECG_page.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/Glucose.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/Heart_rate.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/Oxygen.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/Tempreture.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/pressure.dart';
+import 'package:smart_vitans/pages/patient_pages/bluetooth_page.dart';
+import 'package:smart_vitans/pages/patient_pages/rate_doctor.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
 import 'package:smart_vitans/widgets/Gradient_border.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
 
 import '../../themes.dart';
 import 'components/BoxButton.dart';
@@ -27,12 +29,13 @@ class _PatientHomeState extends State<PatientHome> {
       ['Oxgyen', 'oxygen-tank', OxygenMain()],
       ['Heart Rate', 'heart-rate-monitor', HeartRateMain()],
       ['Glocuse', 'glucometer', GlucoseMain()],
-      ['Tempreature', 'heart-rate-monitor', TempretureMain()],
-      ['ECG', 'thermometer', TempretureMain()],
+      ['Tempreature', 'thermometer', TempretureMain()],
+      ['ECG', 'heart-rate-monitor', ECGMain()],
       ['Additional services', 'plus', AddServicies()],
+      ['Rate Doctor', 'plus', RateDoctor()],
+      ['Recieve Measures', 'plus', BluetoothPage()],
     ];
     return Scaffold(
-      // bottomNavigationBar: NavBar(size: size),
       backgroundColor: Color(0xFFF0F8FA),
       body: Column(
         children: [

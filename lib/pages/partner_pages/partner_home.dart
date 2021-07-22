@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:smart_vitans/pages/common_pages/Measurements/Glucose_measurment.dart';
+import 'package:smart_vitans/pages/common_pages/Measurements/Oxgyen_measurment.dart';
+import 'package:smart_vitans/pages/common_pages/Measurements/Tempreture_measurment.dart';
+import 'package:smart_vitans/pages/common_pages/Measurements/heart_rate_measurment.dart';
+import 'package:smart_vitans/pages/common_pages/Measurements/pressure_mrasurment.dart';
 import 'package:smart_vitans/pages/common_pages/addservicies.dart';
-import 'package:smart_vitans/pages/common_pages/partner_n_patient/Glucose.dart';
-import 'package:smart_vitans/pages/common_pages/partner_n_patient/Heart_rate.dart';
-import 'package:smart_vitans/pages/common_pages/partner_n_patient/Oxygen.dart';
 import 'package:smart_vitans/pages/common_pages/partner_n_patient/Tempreture.dart';
-import 'package:smart_vitans/pages/common_pages/partner_n_patient/pressure.dart';
 import 'package:smart_vitans/pages/patient_pages/components/BoxButton.dart';
 import 'package:smart_vitans/pages/patient_pages/components/Title_Box.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
@@ -21,17 +22,16 @@ class _PartnerHomeState extends State<PartnerHome> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     List buttons = [
-      ['Blood Preasure', 'blood-pressure', PressureMain()],
-      ['Oxgyen', 'oxygen-tank', OxygenMain()],
-      ['Heart Rate', 'heart-rate-monitor', HeartRateMain()],
-      ['Glocuse', 'glucometer', GlucoseMain()],
-      ['Tempreature', 'heart-rate-monitor', TempretureMain()],
-      ['ECG', 'thermometer', TempretureMain()],
-      ['patient history', 'parchment', AddServicies()],
-      ['Additional services', 'plus', AddServicies()],
+      ['Blood Preasure', 'blood-pressure', PressureMeasure()],
+      ['Oxgyen', 'oxygen-tank', OxygenMeasure()],
+      ['Heart Rate', 'heart-rate-monitor', HeartRateMeasure()],
+      ['Glocuse', 'glucometer', GlucoseMeasure()],
+      ['Tempreature', 'thermometer', TempMeasure()],
+      ['patient history', 'parchment', AddServicies(type: 0)],
+      ['Additional services', 'plus', AddServicies(type: 1)],
     ];
     return Scaffold(
-        backgroundColor: Color(0xFFF0F8FA),
+        backgroundColor: const Color(0xFFF0F8FA),
         body: Column(
           children: [
             Container(

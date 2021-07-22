@@ -168,15 +168,7 @@ class _SignUpState extends State<SignUp> {
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => Container(
                       child: (index == 0)
-                          ? Center(
-                              child: GradientBoarder(
-                                size: size,
-                                widget: inputfield(
-                                    size, 'Patient id', 'patient id', false),
-                                width: size.width * 0.75,
-                                rad: 50,
-                              ),
-                            )
+                          ? SizedBox()
                           : (index == 1)
                               ? Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

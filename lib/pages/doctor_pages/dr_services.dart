@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:smart_vitans/pages/common_pages/pmedication_page.dart';
 import 'package:smart_vitans/pages/history/Illness_history_page.dart';
 import 'package:smart_vitans/pages/history/medication_history.dart';
 import 'package:smart_vitans/pages/history/scans_history_page.dart';
@@ -10,41 +11,21 @@ import 'package:smart_vitans/widgets/Gradient_border.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 
 import '../../themes.dart';
-import 'pmedication_page.dart';
 
-class AddServicies extends StatefulWidget {
-  final int type;
-
-  const AddServicies({Key key, this.type}) : super(key: key);
+class DrServicies extends StatefulWidget {
   @override
-  _AddServiciesState createState() => _AddServiciesState();
+  _DrServiciesState createState() => _DrServiciesState();
 }
 
-class _AddServiciesState extends State<AddServicies> {
+class _DrServiciesState extends State<DrServicies> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     List buttons = [
       ['Medication reminder', 'alarm', PMedication()],
-      [
-        (widget.type == 0)
-            ? 'Patient scans & diagnosis history'
-            : 'my scans & diagnosis history',
-        'scanner',
-        ScansNDiagnosis()
-      ],
-      [
-        (widget.type == 0)
-            ? 'Patient medication history'
-            : 'my medication history',
-        'prescription',
-        MedicationHistory()
-      ],
-      [
-        (widget.type == 0) ? 'patient history' : 'my illness history',
-        'parchment',
-        IllnessHistory()
-      ],
+      ['my scans & diagnosis history', 'scanner', ScansNDiagnosis()],
+      ['my medication history', 'prescription', MedicationHistory()],
+      ['my illness history', 'parchment', IllnessHistory()],
     ];
     return Scaffold(
       bottomNavigationBar: NavBar(size: size),
@@ -63,9 +44,7 @@ class _AddServiciesState extends State<AddServicies> {
                   top: size.height / 13,
                   left: size.width * 0.08,
                   child: Text(
-                    (widget.type == 0)
-                        ? 'Patient History'
-                        : 'additional servecies',
+                    'additional servecies',
                     style:
                         AppFonts.buttonText.copyWith(color: AppColors.cWhite),
                   ),
