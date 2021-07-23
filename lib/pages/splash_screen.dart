@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_vitans/pages/doctor_pages/doctor_mainpage.dart';
+import 'package:smart_vitans/pages/partner_pages/partner_mainpage.dart';
+import 'package:smart_vitans/pages/patient_pages/patient_mainpage.dart';
+import 'package:smart_vitans/shared_prefs.dart';
 import 'package:smart_vitans/widgets/heart_beat.dart';
 import 'dart:async';
 import '../themes.dart';
@@ -11,13 +15,38 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  int type;
+  getUserType() async {
+    type = await SharedPrefsHelper.getUserTypeFromPrefs();
+    return type;
+  }
+
   @override
   void initState() {
     super.initState();
+    getUserType();
     Timer(
-        Duration(seconds: 3),
-        () => Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => SignIN())));
+      Duration(seconds: 3),
+      () {
+        switch (type) {
+          case 0:
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => DoctorMainPage()));
+            break;
+          case 1:
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => PatientMainPage()));
+            break;
+          case 2:
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => PartnerMainPage()));
+            break;
+          default:
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => SignIN()));
+        }
+      },
+    );
   }
 
   @override

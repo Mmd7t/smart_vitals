@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:smart_vitans/pages/patient_pages/patient_home.dart';
-import 'package:smart_vitans/pages/patient_pages/patient_profile.dart';
-import 'package:smart_vitans/pages/setting.dart';
 import 'package:smart_vitans/providers/navbar_provider.dart';
 
 import '../themes.dart';

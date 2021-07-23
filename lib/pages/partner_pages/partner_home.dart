@@ -5,7 +5,6 @@ import 'package:smart_vitans/pages/common_pages/Measurements/Tempreture_measurme
 import 'package:smart_vitans/pages/common_pages/Measurements/heart_rate_measurment.dart';
 import 'package:smart_vitans/pages/common_pages/Measurements/pressure_mrasurment.dart';
 import 'package:smart_vitans/pages/common_pages/addservicies.dart';
-import 'package:smart_vitans/pages/common_pages/partner_n_patient/Tempreture.dart';
 import 'package:smart_vitans/pages/patient_pages/components/BoxButton.dart';
 import 'package:smart_vitans/pages/patient_pages/components/Title_Box.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';

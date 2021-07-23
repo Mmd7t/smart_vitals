@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
-
 import '../../themes.dart';
 import 'dr_services.dart';
 

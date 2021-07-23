@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../themes.dart';
-import 'Gradient_dividing_line.dart';
 
 class MyCard extends StatelessWidget {
   final String measure;

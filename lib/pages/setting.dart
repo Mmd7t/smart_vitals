@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:smart_vitans/pages/registration/login.dart';
+import 'package:smart_vitans/providers/navbar_provider.dart';
+import 'package:smart_vitans/shared_prefs.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
 import 'package:smart_vitans/widgets/heart_beat.dart';
 
@@ -93,6 +96,7 @@ class ListOFSettings extends StatelessWidget {
   final List settings;
   @override
   Widget build(BuildContext context) {
+    var nav = Provider.of<NavBarProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -107,9 +111,7 @@ class ListOFSettings extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 16,
-        ),
+        const SizedBox(height: 16),
         InkWell(
           onTap: () {},
           child: Text(
@@ -119,9 +121,7 @@ class ListOFSettings extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 16,
-        ),
+        const SizedBox(height: 16),
         InkWell(
           onTap: () {},
           child: Text(
@@ -131,11 +131,15 @@ class ListOFSettings extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 16,
-        ),
+        const SizedBox(height: 16),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => SignIN()),
+                (route) => false);
+            SharedPrefsHelper.removeUserType();
+            nav.setCIndex(1);
+          },
           child: Text(
             settings[3],
             style: AppFonts.buttonText.copyWith(
