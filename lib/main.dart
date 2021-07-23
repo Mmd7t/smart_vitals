@@ -6,6 +6,9 @@ import 'package:smart_vitans/providers/navbar_provider.dart';
 import 'package:smart_vitans/providers/user_id_provider.dart';
 import 'package:smart_vitans/themes.dart';
 
+import 'constants.dart';
+import 'shared_prefs.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -15,7 +18,22 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  getId() async {
+    Constants.userId = await SharedPrefsHelper.getIdFromPrefs();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getId();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

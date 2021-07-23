@@ -19,7 +19,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   delayed_display: ^2.0.0
   dio: ^4.0.0
-  flutter_blue: ^0.8.0
+  # flutter_blue: ^0.8.0
+  flutter_bluetooth_serial: ^0.3.2
   flutter_svg: ^0.22.0
   image_picker: any
   lottie: ^1.1.0
