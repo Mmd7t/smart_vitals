@@ -3,4 +3,6 @@ class Constants {
   static int userId;
 }
 
+var hind;
+
 enum UserType { patient, doctor, partner }
