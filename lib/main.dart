@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_vitans/pages/splash_screen.dart';
 import 'package:smart_vitans/providers/navbar_provider.dart';
-import 'package:smart_vitans/providers/user_id_provider.dart';
 import 'package:smart_vitans/themes.dart';
 
 import 'constants.dart';
@@ -39,7 +38,6 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => NavBarProvider()),
-        ChangeNotifierProvider(create: (context) => UserIdProvider()),
       ],
       builder: (context, child) {
         return MaterialApp(

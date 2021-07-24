@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:smart_vitans/models/registration_model.dart';
 import 'package:smart_vitans/pages/doctor_pages/doctor_mainpage.dart';
 import 'package:smart_vitans/pages/partner_pages/partner_mainpage.dart';
 import 'package:smart_vitans/pages/patient_pages/patient_mainpage.dart';
-import 'package:smart_vitans/providers/user_id_provider.dart';
 import 'package:smart_vitans/services/registration_services.dart';
 import 'package:smart_vitans/shared_prefs.dart';
 import 'package:smart_vitans/widgets/Gradient_border.dart';
@@ -45,7 +43,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var userId = Provider.of<UserIdProvider>(context);
     return Scaffold(
       backgroundColor: AppColors.cdarkwhite,
       body: SingleChildScrollView(
