@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:smart_vitans/constants.dart';
 import 'package:smart_vitans/models/user_profile_model.dart';
 import 'package:smart_vitans/services/profile_service.dart';
-import 'package:smart_vitans/shared_prefs.dart';
 import 'package:smart_vitans/widgets/DrTitleText_page.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
 import 'package:smart_vitans/widgets/Gradient_border.dart';
@@ -93,10 +92,10 @@ class _DrProfileState extends State<DrProfile> {
                 const SizedBox(height: 16),
                 DrInformation(
                   email: snapshot.data.response.email,
-                  age: snapshot.data.response.age ?? '',
+                  age: snapshot.data.response.age.toString() ?? '',
                   gender: snapshot.data.response.gender ?? '',
                   speciality: snapshot.data.response.speciality ?? '',
-                  city: snapshot.data.response.city ?? '',
+                  city: snapshot.data.response.city.toString() ?? '',
                 ),
                 const SizedBox(height: 16),
                 GrayLine(size: size),
