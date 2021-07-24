@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
-import 'package:smart_vitans/widgets/circule_progress.dart';
+import 'package:smart_vitans/widgets/circle_progress/circle_glucose.dart';
 
 import '../../../themes.dart';
 
@@ -40,7 +40,7 @@ class _GlucoseMainState extends State<GlucoseMain> {
             SizedBox(
               height: 32,
             ),
-            RadialProgress(
+            RadialProgressGlucose(
               size: size,
               value: '  140\nmg/dL',
               duration: 4,

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
-import 'package:smart_vitans/widgets/circule_progress.dart';
-
+import 'package:smart_vitans/widgets/circle_progress/circle_pressure.dart';
 import '../../../themes.dart';
 
 class PressureMain extends StatefulWidget {
@@ -38,7 +37,7 @@ class _PressureMainState extends State<PressureMain> {
               ],
             ),
             SizedBox(height: 32),
-            RadialProgress(
+            RadialProgressPressure(
               size: size,
               value: '120/\n  80',
               duration: 4,

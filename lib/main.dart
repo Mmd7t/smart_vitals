@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_vitans/pages/splash_screen.dart';
+import 'package:smart_vitans/providers/device_provider.dart';
 import 'package:smart_vitans/providers/navbar_provider.dart';
 import 'package:smart_vitans/themes.dart';
 
@@ -38,6 +39,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => NavBarProvider()),
+        ChangeNotifierProvider(create: (context) => DeviceProvider()),
       ],
       builder: (context, child) {
         return MaterialApp(

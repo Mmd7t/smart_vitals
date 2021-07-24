@@ -49,12 +49,6 @@ class _ChatPage extends State<ChatPage> {
       });
 
       connection.input.listen(_onDataReceived).onDone(() {
-        // Example: Detect which side closed the connection
-        // There should be `isDisconnecting` flag to show are we are (locally)
-        // in middle of disconnecting process, should be set before calling
-        // `dispose`, `finish` or `close`, which all causes to disconnect.
-        // If we except the disconnection, `onDone` should be fired as result.
-        // If we didn't except this (no flag set), it means closing by remote.
         if (isDisconnecting) {
           print('Disconnecting locally!');
         } else {
@@ -72,7 +66,6 @@ class _ChatPage extends State<ChatPage> {
 
   @override
   void dispose() {
-    // Avoid memory leak (`setState` after dispose) and disconnect
     if (isConnected) {
       isDisconnecting = true;
       connection.dispose();
@@ -89,10 +82,11 @@ class _ChatPage extends State<ChatPage> {
         children: <Widget>[
           Container(
             child: Text(
-                (text) {
-                  return text == '/shrug' ? '¯\\_(ツ)_/¯' : text;
-                }(_message.text.trim()),
-                style: TextStyle(color: Colors.white)),
+              (text) {
+                return text == '/shrug' ? '¯\\_(ツ)_/¯' : text;
+              }(_message.text.trim()),
+              style: TextStyle(color: Colors.white),
+            ),
             padding: EdgeInsets.all(12.0),
             margin: EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
             width: 222.0,
@@ -118,24 +112,24 @@ class _ChatPage extends State<ChatPage> {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(5),
-              width: double.infinity,
-              child: FittedBox(
-                child: Row(
-                  children: [
-                    FlatButton(
-                      onPressed: isConnected ? () => _sendMessage('1') : null,
-                      child: ClipOval(child: Image.asset('images/ledOn.png')),
-                    ),
-                    FlatButton(
-                      onPressed: isConnected ? () => _sendMessage('0') : null,
-                      child: ClipOval(child: Image.asset('images/ledOff.png')),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.all(5),
+            //   width: double.infinity,
+            //   child: FittedBox(
+            //     child: Row(
+            //       children: [
+            //         TextButton(
+            //           onPressed: isConnected ? () => _sendMessage('1') : null,
+            //           child: ClipOval(child: Image.asset('images/ledOn.png')),
+            //         ),
+            //         TextButton(
+            //           onPressed: isConnected ? () => _sendMessage('0') : null,
+            //           child: ClipOval(child: Image.asset('images/ledOff.png')),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Flexible(
               child: ListView(
                   padding: const EdgeInsets.all(12.0),
@@ -233,7 +227,7 @@ class _ChatPage extends State<ChatPage> {
 
     if (text.length > 0) {
       try {
-        connection.output.add(utf8.encode(text + "\r\n"));
+        connection.output.add(utf8.encode(text));
         await connection.output.allSent;
 
         setState(() {

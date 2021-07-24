@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
-import 'package:smart_vitans/widgets/circule_progress.dart';
-
+import 'package:smart_vitans/widgets/circle_progress/circle_ecg.dart';
 import '../../../themes.dart';
 
 class ECGMain extends StatefulWidget {
@@ -38,7 +37,7 @@ class _ECGMainState extends State<ECGMain> {
               ],
             ),
             SizedBox(height: 32),
-            RadialProgress(
+            RadialProgressECG(
               size: size,
               value: '37',
               duration: 4,

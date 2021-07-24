@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
-import 'package:smart_vitans/widgets/circule_progress.dart';
+import 'package:smart_vitans/widgets/circle_progress/circle_heart_rate.dart';
 import '../../../themes.dart';
 
 class HeartRateMain extends StatefulWidget {
@@ -36,8 +36,8 @@ class _HeartRateMainState extends State<HeartRateMain> {
                 ),
               ],
             ),
-            SizedBox(height: 32),
-            RadialProgress(
+            const SizedBox(height: 32),
+            RadialProgressHeartRate(
               size: size,
               value: '120\n/80',
               duration: 4,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_vitans/widgets/Gray_line.dart';
 import 'package:smart_vitans/widgets/NavBar.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
-import 'package:smart_vitans/widgets/circule_progress.dart';
+import 'package:smart_vitans/widgets/circle_progress/circle_temp.dart';
 
 import '../../../themes.dart';
 
@@ -38,7 +38,7 @@ class _TempretureMainState extends State<TempretureMain> {
               ],
             ),
             SizedBox(height: 32),
-            RadialProgress(
+            RadialProgressTemp(
               size: size,
               value: '37',
               duration: 4,

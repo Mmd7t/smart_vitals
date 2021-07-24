@@ -30,7 +30,7 @@ class _DeviceWithAvailability extends BluetoothDevice {
 }
 
 class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
-  List<_DeviceWithAvailability> devices = List<_DeviceWithAvailability>();
+  List<_DeviceWithAvailability> devices = [];
 
   // Availability
   StreamSubscription<BluetoothDiscoveryResult> _discoveryStreamSubscription;
@@ -122,29 +122,6 @@ class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
     return ListView(
       children: list,
     );
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: Text('Select device'),
-    //     actions: <Widget>[
-    //       _isDiscovering
-    //           ? FittedBox(
-    //               child: Container(
-    //                 margin: new EdgeInsets.all(16.0),
-    //                 child: CircularProgressIndicator(
-    //                   valueColor: AlwaysStoppedAnimation<Color>(
-    //                     Colors.white,
-    //                   ),
-    //                 ),
-    //               ),
-    //             )
-    //           : IconButton(
-    //               icon: Icon(Icons.replay),
-    //               onPressed: _restartDiscovery,
-    //             )
-    //     ],
-    //   ),
-    //   body: ListView(children: list),
-    // );
   }
 }
 

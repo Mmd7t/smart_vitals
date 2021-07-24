@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
-
+import 'package:provider/provider.dart';
+import 'package:smart_vitans/providers/device_provider.dart';
 import 'components/bluetooth_info.dart';
 import 'components/connection.dart';
-
-// class BluetoothPage extends StatefulWidget {
-//   const BluetoothPage({Key key}) : super(key: key);
-
-//   @override
-//   _BluetoothPageState createState() => _BluetoothPageState();
-// }
 
 class BluetoothPage extends StatefulWidget {
   const BluetoothPage({Key key}) : super(key: key);
@@ -39,13 +33,11 @@ class _BluetoothPageState extends State<BluetoothPage> {
               ),
             );
           } else if (future.connectionState == ConnectionState.done) {
-            // return MyHomePage(title: 'Flutter Demo Home Page');
             return Home();
           } else {
             return Home();
           }
         },
-        // child: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
     );
   }
@@ -54,22 +46,24 @@ class _BluetoothPageState extends State<BluetoothPage> {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var deviceId = Provider.of<DeviceProvider>(context);
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text('Connection'),
+        title: const Text('Connection'),
       ),
       body: SelectBondedDevicePage(
         onCahtPage: (device1) {
           BluetoothDevice device = device1;
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return ChatPage(server: device);
-              },
-            ),
-          );
+          deviceId.setDevice(device);
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) {
+          //       return ChatPage(server: device);
+          //     },
+          //   ),
+          // );
         },
       ),
     ));
