@@ -106,18 +106,15 @@ class _RadialProgressHeartRateState extends State<RadialProgressHeartRate>
                   .trim()
               : _messageBuffer + dataString.substring(0, index).trim(),
         );
-        // setState(() {
-        //   messages.add(_Message(
-        //     1,
-        //     backspacesCounter > 0
-        //         ? _messageBuffer
-        //             .substring(0, _messageBuffer.length - backspacesCounter)
-        //             .trim()
-        //         : _messageBuffer + dataString.substring(0, index).trim(),
-        //   ));
-        // });
+
         _messageBuffer = dataString.substring(index);
       });
+
+      /*-------------------------------------------------------------------------------*/
+      /*---------------------------  Post Data To DataBase  ---------------------------*/
+      /*-------------------------------------------------------------------------------*/
+      ReadDataServices.heartRateCreate(GlucoseHeartTempCreate(
+          patientId: Constants.userId, value: int.parse(messageBlue.text)));
     } else {
       _messageBuffer = (backspacesCounter > 0
               ? _messageBuffer.substring(
@@ -210,12 +207,6 @@ class _RadialProgressHeartRateState extends State<RadialProgressHeartRate>
             onTap: () async {
               _radialProgressAnimationController.forward();
               await _sendMessage('2');
-              /*-------------------------------------------------------------------------------*/
-              /*---------------------------  Post Data To DataBase  ---------------------------*/
-              /*-------------------------------------------------------------------------------*/
-              ReadDataServices.heartRateCreate(GlucoseHeartTempCreate(
-                  patientId: Constants.userId,
-                  value: int.parse(messageBlue.text)));
             },
             child: GradientText(
               text: "Measure",

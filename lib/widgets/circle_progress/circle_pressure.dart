@@ -3,7 +3,6 @@ import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_vitans/providers/device_provider.dart';
-import 'package:vector_math/vector_math_64.dart' as math;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';

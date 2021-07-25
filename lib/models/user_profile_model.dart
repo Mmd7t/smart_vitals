@@ -1,15 +1,3 @@
-// To parse this JSON data, do
-//
-//     final userProfileModel = userProfileModelFromJson(jsonString);
-
-import 'dart:convert';
-
-UserProfileModel userProfileModelFromJson(String str) =>
-    UserProfileModel.fromJson(json.decode(str));
-
-String userProfileModelToJson(UserProfileModel data) =>
-    json.encode(data.toJson());
-
 class UserProfileModel {
   UserProfileModel({
     this.error,
@@ -80,6 +68,7 @@ class Response {
     this.updatedAt,
     this.doctorId,
     this.partnerId,
+    this.patients,
   });
 
   int id;
@@ -97,6 +86,7 @@ class Response {
   DateTime updatedAt;
   dynamic doctorId;
   dynamic partnerId;
+  List patients;
 
   factory Response.fromJson(Map<String, dynamic> json) => Response(
         id: json["id"],
@@ -114,6 +104,7 @@ class Response {
         updatedAt: DateTime.parse(json["updated_at"]),
         doctorId: json["doctor_id"],
         partnerId: json["partner_id"],
+        patients: json["patients"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -132,5 +123,6 @@ class Response {
         "updated_at": updatedAt.toIso8601String(),
         "doctor_id": doctorId,
         "partner_id": partnerId,
+        "patients": patients,
       };
 }

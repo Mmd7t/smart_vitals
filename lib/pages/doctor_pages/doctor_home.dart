@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:smart_vitans/constants.dart';
+import 'package:smart_vitans/models/user_profile_model.dart';
+import 'package:smart_vitans/services/profile_service.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
 import '../../themes.dart';
 import 'dr_services.dart';
@@ -60,35 +63,45 @@ class _DoctorHomeState extends State<DoctorHome> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(3.0),
-                  child: Card(
-                    child: ListTile(
-                      onTap: () {},
-                      title: Text('patient1'),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text('spo2'),
-                          Text('hr'),
-                          Text('sys'),
-                          Text('dia'),
-                          Text('sug'),
-                        ],
-                      ),
-                      leading: CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/images/profile.png'),
-                      ),
-                    ),
-                  ),
-                );
-              },
-              itemCount: 20,
-            ),
+            child: FutureBuilder<UserProfileModel>(
+                future: ProfileService.profile(Constants.userId),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else {
+                    return ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Card(
+                            child: ListTile(
+                              onTap: () {},
+                              title: Text('patient1'),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text('spo2'),
+                                  Text('hr'),
+                                  Text('sys'),
+                                  Text('dia'),
+                                  Text('sug'),
+                                ],
+                              ),
+                              leading: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('assets/images/profile.png'),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: 20,
+                    );
+                  }
+                }),
           ),
         ],
       ),
