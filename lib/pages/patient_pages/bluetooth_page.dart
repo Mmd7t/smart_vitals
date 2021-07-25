@@ -56,6 +56,11 @@ class Home extends StatelessWidget {
         onCahtPage: (device1) {
           BluetoothDevice device = device1;
           deviceId.setDevice(device);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Device Connected Successfully'),
+            ),
+          );
           // Navigator.push(
           //   context,
           //   MaterialPageRoute(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
+import 'package:smart_vitans/models/get_data_model.dart';
+import 'package:smart_vitans/services/get_data_services.dart';
 import 'package:smart_vitans/widgets/TitleTeaxt.dart';
 import 'package:smart_vitans/widgets/card.dart';
 
+import '../../../constants.dart';
 import '../../../themes.dart';
 
 class OxygenMeasure extends StatefulWidget {
@@ -15,9 +17,7 @@ class OxygenMeasure extends StatefulWidget {
 class _OxygenMeasureState extends State<OxygenMeasure> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: NavBar(size: size),
       backgroundColor: AppColors.cdarkwhite,
       body: SafeArea(
         child: Column(
@@ -42,12 +42,59 @@ class _OxygenMeasureState extends State<OxygenMeasure> {
             ),
             // you should use Cubit to generate a list of MyCard acorrding to Back end data
             // all Mycard data should be replaced with Backend data
-            MyCard(
-              AM_PM: 'AM',
-              time: '2:00',
-              date: 'Today',
-              measure: '100 Bpm',
-            ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       color: AppColors.cLightGrey,
+            //       borderRadius: BorderRadius.circular(16),
+            //       boxShadow: [
+            //         BoxShadow(
+            //           spreadRadius: 4,
+            //           blurRadius: 4,
+            //           color: AppColors.cLightGrey,
+            //           offset: Offset(0, 4),
+            //         ),
+            //       ],
+            //     ),
+            //     child: SizedBox(
+            //       width: double.infinity,
+            //       child: FutureBuilder<MeasuresListModel>(
+            //           future:
+            //               GetDateServices.g(Constants.userId),
+            //           builder: (context, snapshot) {
+            //             if (!snapshot.hasData) {
+            //               return Center(
+            //                 child: CircularProgressIndicator(),
+            //               );
+            //             } else {
+            //               return ListView.builder(
+            //                 itemCount: snapshot.data.response.length,
+            //                 itemBuilder: (context, index) {
+            //                   return Card(
+            //                     margin: const EdgeInsets.symmetric(
+            //                         horizontal: 8, vertical: 12),
+            //                     child: ListTile(
+            //                       title: Text(
+            //                           '${snapshot.data.response[index].createdAt}'),
+            //                       subtitle: Column(
+            //                         mainAxisSize: MainAxisSize.min,
+            //                         children: [
+            //                           Text(
+            //                               '${snapshot.data.response[index].value}'),
+            //                           Text(
+            //                               '${snapshot.data.response[index].desc}'),
+            //                         ],
+            //                       ),
+            //                     ),
+            //                   );
+            //                 },
+            //               );
+            //             }
+            //           }),
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),

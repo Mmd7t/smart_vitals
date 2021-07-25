@@ -47,7 +47,6 @@ class _AddServiciesState extends State<AddServicies> {
       ],
     ];
     return Scaffold(
-      bottomNavigationBar: NavBar(size: size),
       backgroundColor: Color(0xFFF0F8FA),
       body: Column(
         children: [

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import '../themes.dart';
 
 class MyCard extends StatelessWidget {
-  final String measure;
-  final String date;
-  final String time;
-  final String AM_PM;
+  // final String measure;
+  // final String date;
+  // final String time;
+  // final String AM_PM;
 
-  const MyCard({
-    Key key,
-    this.measure,
-    this.date,
-    this.time,
-    this.AM_PM,
-  }) : super(key: key);
+  // const MyCard({
+  //   Key key,
+  //   this.measure,
+  //   this.date,
+  //   this.time,
+  //   this.AM_PM,
+  // }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

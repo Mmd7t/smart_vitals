@@ -28,7 +28,6 @@ class _DrServiciesState extends State<DrServicies> {
       ['my illness history', 'parchment', IllnessHistory()],
     ];
     return Scaffold(
-      bottomNavigationBar: NavBar(size: size),
       backgroundColor: Color(0xFFF0F8FA),
       body: Column(
         children: [

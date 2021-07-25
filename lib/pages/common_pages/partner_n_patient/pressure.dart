@@ -16,7 +16,6 @@ class _PressureMainState extends State<PressureMain> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.cdarkwhite,
-      bottomNavigationBar: NavBar(size: size),
       body: SafeArea(
         child: Column(
           children: [
