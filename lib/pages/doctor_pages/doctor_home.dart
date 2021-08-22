@@ -43,20 +43,22 @@ class _DoctorHomeState extends State<DoctorHome> {
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 10,
+            height: (size.height / 8),
             child: Stack(
               children: [
                 GradientBox(
                   size: size.height / 8,
-                  radius: 56.0,
+                  radius: 50.0,
                 ),
-                Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
-                  child: Text(
-                    'My patients', //get username from backend ex:sondos
-                    style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Text(
+                      'My patients', //get username from backend ex:sondos
+                      style:
+                          AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                    ),
                   ),
                 ),
               ],
@@ -76,19 +78,25 @@ class _DoctorHomeState extends State<DoctorHome> {
                         return Padding(
                           padding: const EdgeInsets.all(3.0),
                           child: Card(
+                            elevation: 3,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                             child: ListTile(
                               onTap: () {},
                               title: Text('patient1'),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text('spo2'),
-                                  Text('hr'),
-                                  Text('sys'),
-                                  Text('dia'),
-                                  Text('sug'),
-                                ],
+                              subtitle: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text('spo2    =>    20'),
+                                    Text('hr    =>    20'),
+                                    Text('sys    =>    30'),
+                                    Text('dia    =>    40'),
+                                    Text('sug    =>   50'),
+                                  ],
+                                ),
                               ),
                               leading: CircleAvatar(
                                 backgroundImage:
@@ -110,7 +118,7 @@ class _DoctorHomeState extends State<DoctorHome> {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => DrServicies()));
         },
-        child: const Icon(Icons.home_repair_service),
+        child: const Icon(Icons.home_repair_service, color: Colors.white),
       ),
     );
   }

@@ -44,8 +44,8 @@ class _PatientHomeState extends State<PatientHome> {
           future: ProfileService.profile(Constants.userId),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              String name= snapshot.data.response.name;
-              String firstName= name.split(" ").first;
+              String name = snapshot.data.response.name;
+              String firstName = name.split(" ").first;
               return SingleChildScrollView(
                 child: Column(
                   children: [

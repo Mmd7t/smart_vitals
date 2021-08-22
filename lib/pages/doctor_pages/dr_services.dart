@@ -8,8 +8,6 @@ import 'package:smart_vitans/pages/history/scans_history_page.dart';
 import 'package:smart_vitans/pages/patient_pages/components/BoxButton.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
 import 'package:smart_vitans/widgets/Gradient_border.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
-
 import '../../themes.dart';
 
 class DrServicies extends StatefulWidget {
@@ -32,90 +30,96 @@ class _DrServiciesState extends State<DrServicies> {
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 50,
+            height: (size.height / 8),
             child: Stack(
               children: [
                 GradientBox(
                   size: size.height / 8,
-                  radius: 56.0,
+                  radius: 50.0,
                 ),
-                Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
-                  child: Text(
-                    'additional servecies',
-                    style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Text(
+                      'additional servecies',
+                      style:
+                          AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: size.height * 0.02),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GradientBoarder(
-                widget: BoxButton(
-                  size: size,
-                  buttom: buttons[0],
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GradientBoarder(
+                  widget: BoxButton(
+                    size: size,
+                    buttom: buttons[0],
+                    width: size.width * 0.7,
+                    height: size.width * 0.3,
+                  ),
                   width: size.width * 0.7,
                   height: size.width * 0.3,
-                ),
-                width: size.width * 0.7,
-                height: size.width * 0.3,
-                rad: 30,
-                size: size,
-                offesetX: 3,
-                offesetY: 3,
-                blur: 5,
-              ),
-              GradientBoarder(
-                widget: BoxButton(
+                  rad: 30,
                   size: size,
-                  buttom: buttons[1],
+                  offesetX: 3,
+                  offesetY: 3,
+                  blur: 5,
+                ),
+                const SizedBox(height: 10),
+                GradientBoarder(
+                  widget: BoxButton(
+                    size: size,
+                    buttom: buttons[1],
+                    width: size.width * 0.7,
+                    height: size.width * 0.3,
+                  ),
                   width: size.width * 0.7,
                   height: size.width * 0.3,
-                ),
-                width: size.width * 0.7,
-                height: size.width * 0.3,
-                rad: 30,
-                size: size,
-                offesetX: 3,
-                offesetY: 3,
-                blur: 5,
-              ),
-              GradientBoarder(
-                widget: BoxButton(
+                  rad: 30,
                   size: size,
-                  buttom: buttons[2],
+                  offesetX: 3,
+                  offesetY: 3,
+                  blur: 5,
+                ),
+                const SizedBox(height: 10),
+                GradientBoarder(
+                  widget: BoxButton(
+                    size: size,
+                    buttom: buttons[2],
+                    width: size.width * 0.7,
+                    height: size.width * 0.3,
+                  ),
                   width: size.width * 0.7,
                   height: size.width * 0.3,
-                ),
-                width: size.width * 0.7,
-                height: size.width * 0.3,
-                rad: 30,
-                size: size,
-                offesetX: 3,
-                offesetY: 3,
-                blur: 5,
-              ),
-              GradientBoarder(
-                widget: BoxButton(
+                  rad: 30,
                   size: size,
-                  buttom: buttons[3],
+                  offesetX: 3,
+                  offesetY: 3,
+                  blur: 5,
+                ),
+                const SizedBox(height: 10),
+                GradientBoarder(
+                  widget: BoxButton(
+                    size: size,
+                    buttom: buttons[3],
+                    width: size.width * 0.7,
+                    height: size.width * 0.3,
+                  ),
                   width: size.width * 0.7,
                   height: size.width * 0.3,
+                  rad: 30,
+                  size: size,
+                  offesetX: 3,
+                  offesetY: 3,
+                  blur: 5,
                 ),
-                width: size.width * 0.7,
-                height: size.width * 0.3,
-                rad: 30,
-                size: size,
-                offesetX: 3,
-                offesetY: 3,
-                blur: 5,
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

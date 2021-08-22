@@ -5,7 +5,6 @@ import 'package:smart_vitans/pages/splash_screen.dart';
 import 'package:smart_vitans/providers/device_provider.dart';
 import 'package:smart_vitans/providers/navbar_provider.dart';
 import 'package:smart_vitans/themes.dart';
-
 import 'constants.dart';
 import 'shared_prefs.dart';
 
@@ -61,11 +60,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-/*
-
-add in my scans (upload photos, notes, date, symtopms)
-
- */
