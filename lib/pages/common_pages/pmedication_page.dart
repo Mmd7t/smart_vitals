@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smart_vitans/widgets/GradientBox.dart';
-import 'package:smart_vitans/widgets/NavBar.dart';
-
 import '../../themes.dart';
 
 class PMedication extends StatefulWidget {
@@ -38,26 +36,23 @@ class _PMedicationState extends State<PMedication> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      bottomNavigationBar: NavBar(
-        size: size,
-      ),
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 50,
             child: Stack(
               children: [
-                GradientBox(
-                  size: size.height / 8,
-                  radius: 56.0,
-                ),
-                Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
-                  child: Text(
-                    'My Medications', //get username from backend ex:sondos
-                    style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                GradientBox(size: size.height / 8, radius: 50.0),
+                SafeArea(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Text(
+                        'My Medications', //get username from backend ex:sondos
+                        style: AppFonts.buttonText
+                            .copyWith(color: AppColors.cWhite),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -85,7 +80,7 @@ class _PMedicationState extends State<PMedication> {
                     ),
                   );
                 },
-                itemCount: 9),
+                itemCount: 15),
           ),
         ],
       ),

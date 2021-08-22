@@ -37,69 +37,72 @@ class _PatientHomeState extends State<PatientHome> {
     ];
     return Scaffold(
       backgroundColor: Color(0xFFF0F8FA),
-      body: Column(
-        children: [
-          Container(
-            height: (size.height / 3) + 50,
-            child: Stack(
-              children: [
-                GradientBox(
-                  size: size.height / 3,
-                  radius: 56.0,
-                ),
-                Positioned(
-                  top: size.height / 9,
-                  left: size.width * 0.08,
-                  child: Text(
-                    'Welcome back, sondos', //get username from backend ex:sondos
-                    style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: (size.height / 3) + 50,
+              child: Stack(
+                children: [
+                  GradientBox(
+                    size: size.height / 3,
+                    radius: 56.0,
                   ),
-                ),
-                Positioned(
-                  top: size.height / 5,
-                  left: size.width * 0.14,
-                  child: Text(
-                    'How may I help ?',
-                    style: AppFonts.maintext.copyWith(color: AppColors.cWhite),
+                  Positioned(
+                    top: size.height / 9,
+                    left: size.width * 0.08,
+                    child: Text(
+                      'Welcome back, sondos', //get username from backend ex:sondos
+                      style:
+                          AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                    ),
                   ),
-                ),
-                Positioned(
-                  left: size.width * 0.05,
-                  top: (size.height / 3) - 10,
-                  child: TitleBox(size: size),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: size.height * 0.03),
-          Wrap(
-            direction: Axis.horizontal,
-            runAlignment: WrapAlignment.center,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            alignment: WrapAlignment.center,
-            runSpacing: 10,
-            spacing: 12,
-            children: List.generate(
-              buttons.length,
-              (index) => GradientBoarder(
-                widget: BoxButton(
-                  size: size,
-                  buttom: buttons[index],
-                  width: size.width * 0.28,
-                  height: size.width * 0.28,
-                ),
-                width: size.width * 0.28,
-                height: size.width * 0.28,
-                rad: 30,
-                size: size,
-                offesetX: 3,
-                offesetY: 3,
-                blur: 5,
+                  Positioned(
+                    top: size.height / 5,
+                    left: size.width * 0.14,
+                    child: Text(
+                      'How may I help ?',
+                      style:
+                          AppFonts.maintext.copyWith(color: AppColors.cWhite),
+                    ),
+                  ),
+                  Positioned(
+                    left: size.width * 0.05,
+                    top: (size.height / 3) - 10,
+                    child: TitleBox(size: size),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+            SizedBox(height: size.height * 0.03),
+            Wrap(
+              direction: Axis.horizontal,
+              runAlignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              runSpacing: 10,
+              spacing: 12,
+              children: List.generate(
+                buttons.length,
+                (index) => GradientBoarder(
+                  widget: BoxButton(
+                    size: size,
+                    buttom: buttons[index],
+                    width: size.width * 0.28,
+                    height: size.width * 0.28,
+                  ),
+                  width: size.width * 0.28,
+                  height: size.width * 0.28,
+                  rad: 30,
+                  size: size,
+                  offesetX: 3,
+                  offesetY: 3,
+                  blur: 5,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

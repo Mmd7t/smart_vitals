@@ -167,7 +167,7 @@ class _PatientProfileState extends State<PatientProfile> {
                 ],
               );
             } else {
-              return CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             }
           }),
     );
