@@ -39,135 +39,138 @@ class _PatientProfileState extends State<PatientProfile> {
           future: ProfileService.profile(Constants.userId),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      GradientBox(size: size.height * 0.22, radius: 56),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 80),
-                        child: TitleText(
-                          text: 'Profile',
-                          arrowcolor: AppColors.cdarkwhite,
-                          withicon: false,
-                          gradienttext: false,
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        GradientBox(size: size.height * 0.17, radius: 56),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: TitleText(
+                            text: 'Profile',
+                            arrowcolor: AppColors.cdarkwhite,
+                            withicon: false,
+                            gradienttext: false,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 24),
-                  Stack(
-                    children: [
-                      Container(
-                        height: size.height * 0.2,
-                        color: AppColors.cLightGrey,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 16, bottom: 16, left: 32),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            GradientBoarder(
-                              size: size,
-                              rad: 101,
-                              width: 100,
-                              height: 100,
-                              widget: Padding(
-                                  padding: const EdgeInsets.all(2),
-                                  child:
-                                      Image.asset('assets/images/profile.png')),
-                            ),
-                            SizedBox(width: 8),
-                            GradientText(
-                              text: '${snapshot.data.response.name}',
-                              font: AppFonts.profile,
-                            ),
-                          ],
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    Stack(
+                      children: [
+                        Container(
+                          height: size.height * 0.2,
+                          color: AppColors.cLightGrey,
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: GradientText(
-                      text: 'User information:',
-                      font: AppFonts.profile,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 16, bottom: 16, left: 32),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              GradientBoarder(
+                                size: size,
+                                rad: 101,
+                                width: 100,
+                                height: 100,
+                                widget: Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child:
+                                        Image.asset('assets/images/profile.png')),
+                              ),
+                              SizedBox(width: 8),
+                              GradientText(
+                                text: '${snapshot.data.response.name}',
+                                font: AppFonts.profile,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  ProfileInfo(
-                    email: '${snapshot.data.response.email}',
-                    age: '${snapshot.data.response.age}',
-                    gender: '${snapshot.data.response.gender}',
-                  ),
-                  const SizedBox(height: 16),
-                  GrayLine(size: size),
-                  const SizedBox(height: 16),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: GradientText(
-                      text: 'Latest Measurements:',
-                      font: AppFonts.profile,
+                    const SizedBox(height: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: GradientText(
+                        text: 'User information:',
+                        font: AppFonts.profile,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ProfileCirculeInfo(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => HeartRateMeasure()));
-                        },
-                        size: size,
-                        info: info[0],
-                        update: true,
+                    const SizedBox(height: 16),
+                    ProfileInfo(
+                      email: '${snapshot.data.response.email}',
+                      age: '${snapshot.data.response.age}',
+                      gender: '${snapshot.data.response.gender}',
+                      
+                    ),
+                    const SizedBox(height: 16),
+                    GrayLine(size: size),
+                    const SizedBox(height: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: GradientText(
+                        text: 'Latest Measurements:',
+                        font: AppFonts.profile,
                       ),
-                      ProfileCirculeInfo(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => GlucoseMeasure()));
-                        },
-                        size: size,
-                        info: info[1],
-                        update: true,
-                      ),
-                      ProfileCirculeInfo(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => TempMeasure()));
-                        },
-                        size: size,
-                        info: info[2],
-                        update: false,
-                      ),
-                      ProfileCirculeInfo(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => OxygenMeasure()));
-                        },
-                        size: size,
-                        info: info[3],
-                        update: true,
-                      ),
-                      ProfileCirculeInfo(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PressureMeasure()));
-                        },
-                        size: size,
-                        info: info[4],
-                        update: false,
-                      ),
-                    ],
-                  )
-                ],
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ProfileCirculeInfo(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => HeartRateMeasure()));
+                          },
+                          size: size,
+                          info: info[0],
+                          update: true,
+                        ),
+                        ProfileCirculeInfo(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => GlucoseMeasure()));
+                          },
+                          size: size,
+                          info: info[1],
+                          update: true,
+                        ),
+                        ProfileCirculeInfo(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => TempMeasure()));
+                          },
+                          size: size,
+                          info: info[2],
+                          update: false,
+                        ),
+                        ProfileCirculeInfo(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => OxygenMeasure()));
+                          },
+                          size: size,
+                          info: info[3],
+                          update: true,
+                        ),
+                        ProfileCirculeInfo(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PressureMeasure()));
+                          },
+                          size: size,
+                          info: info[4],
+                          update: false,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               );
             } else {
-              return CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             }
           }),
     );

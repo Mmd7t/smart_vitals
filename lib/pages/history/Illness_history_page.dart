@@ -83,24 +83,24 @@ class _IllnessHistoryState extends State<IllnessHistory> {
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 10,
+            height: (size.height / 8) + 50,
             child: Stack(
               children: [
                 GradientBox(
-                  size: size.height / 8,
+                  size: size.height / 5,
                   radius: 56.0,
                 ),
                 Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
+                  top: size.height / 10,
+                  left: size.width * 0.15,
                   child: Text(
-                    'My patients', //get username from backend ex:sondos
+                    'My Illness History', //get username from backend ex:sondos
                     style:
                         AppFonts.buttonText.copyWith(color: AppColors.cWhite),
                   ),
                 ),
                 Positioned(
-                  top: size.height / 13,
+                  top: size.height / 11,
                   right: size.width * 0.08,
                   child: IconButton(
                       color: Colors.white,

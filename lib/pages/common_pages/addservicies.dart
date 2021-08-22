@@ -55,7 +55,7 @@ class _AddServiciesState extends State<AddServicies> {
             child: Stack(
               children: [
                 GradientBox(
-                  size: size.height / 8,
+                  size: size.height / 5,
                   radius: 56.0,
                 ),
                 Positioned(
@@ -64,9 +64,9 @@ class _AddServiciesState extends State<AddServicies> {
                   child: Text(
                     (widget.type == 0)
                         ? 'Patient History'
-                        : 'additional servecies',
+                        : 'Additional Servecies',
                     style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                        AppFonts.buttonText.copyWith(color: AppColors.cWhite,fontSize: 35),
                   ),
                 ),
               ],
@@ -91,6 +91,7 @@ class _AddServiciesState extends State<AddServicies> {
                 offesetY: 3,
                 blur: 5,
               ),
+              SizedBox(height: 2,),
               GradientBoarder(
                 widget: BoxButton(
                   size: size,
@@ -106,6 +107,7 @@ class _AddServiciesState extends State<AddServicies> {
                 offesetY: 3,
                 blur: 5,
               ),
+              SizedBox(height: 2,),
               GradientBoarder(
                 widget: BoxButton(
                   size: size,
@@ -121,6 +123,7 @@ class _AddServiciesState extends State<AddServicies> {
                 offesetY: 3,
                 blur: 5,
               ),
+              SizedBox(height: 2,),
               GradientBoarder(
                 widget: BoxButton(
                   size: size,

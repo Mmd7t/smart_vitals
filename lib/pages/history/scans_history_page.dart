@@ -44,20 +44,20 @@ class _ScansNDiagnosisState extends State<ScansNDiagnosis> {
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 10,
+            height: (size.height / 8) + 50,
             child: Stack(
               children: [
                 GradientBox(
-                  size: size.height / 8,
+                  size: size.height / 5,
                   radius: 56.0,
                 ),
                 Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
+                  top: size.height / 10,
+                  left: size.width * 0.15,
                   child: Text(
                     'My scans', //get username from backend ex:sondos
-                    style:
-                        AppFonts.buttonText.copyWith(color: AppColors.cWhite),
+                    style: AppFonts.buttonText
+                        .copyWith(color: AppColors.cWhite, fontSize: 40),
                   ),
                 ),
               ],

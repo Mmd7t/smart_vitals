@@ -90,13 +90,16 @@ class _MedicationHistoryState extends State<MedicationHistory> {
       body: Column(
         children: [
           Container(
-            height: (size.height / 8) + 10,
+            height: (size.height / 8) + 50,
             child: Stack(
               children: [
-                GradientBox(size: size.height / 8, radius: 56.0),
+                GradientBox(
+                  size: size.height / 5,
+                  radius: 56.0,
+                ),
                 Positioned(
-                  top: size.height / 13,
-                  left: size.width * 0.08,
+                  top: size.height / 10,
+                  left: size.width * 0.15,
                   child: Text(
                     'My Medications', //get username from backend ex:sondos
                     style:
@@ -104,9 +107,10 @@ class _MedicationHistoryState extends State<MedicationHistory> {
                   ),
                 ),
                 Positioned(
-                  top: size.height / 13,
+                  top: size.height / 11,
                   right: size.width * 0.08,
                   child: IconButton(
+                      splashColor: Colors.grey[200],
                       color: Colors.white,
                       onPressed: () {
                         setState(() {});
