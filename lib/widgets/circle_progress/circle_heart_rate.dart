@@ -6,12 +6,14 @@ import 'package:smart_vitans/constants.dart';
 import 'package:smart_vitans/models/read_data/glucose_create_model.dart';
 import 'package:smart_vitans/providers/device_provider.dart';
 import 'package:smart_vitans/services/read_data_services.dart';
+import 'package:smart_vitans/widgets/heart_beat.dart';
+import 'package:smart_vitans/widgets/heart_rate_widget.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 import '../../themes.dart';
 import '../Gradient_text.dart';
-import '../animated_Text.dart';
+import '../ecg_animated_widget.dart';
 import 'radial_pointer.dart';
 
 class RadialProgressHeartRate extends StatefulWidget {
@@ -247,7 +249,7 @@ class _RadialProgressHeartRateState extends State<RadialProgressHeartRate>
           painter: RadialPainter(progressDegrees),
         ),
         if (progressDegrees == 360)
-          AnmitedWidget(
+          HeartRate(
             size: widget.size,
             figure: widget.figure,
             condition: widget.condition,

@@ -6,13 +6,14 @@ import 'package:smart_vitans/constants.dart';
 import 'package:smart_vitans/models/read_data/glucose_create_model.dart';
 import 'package:smart_vitans/providers/device_provider.dart';
 import 'package:smart_vitans/services/read_data_services.dart';
+import 'package:smart_vitans/widgets/temprature_widget.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 import '../../themes.dart';
 import '../Gradient_text.dart';
-import '../animated_Text.dart';
+import '../ecg_animated_widget.dart';
 import 'radial_pointer.dart';
 
 class RadialProgressTemp extends StatefulWidget {
@@ -256,7 +257,7 @@ class _RadialProgressTempState extends State<RadialProgressTemp>
           painter: RadialPainter(progressDegrees),
         ),
         if (progressDegrees == 360)
-          AnmitedWidget(
+          Temprature(
             size: widget.size,
             figure: widget.figure,
             condition: widget.condition,

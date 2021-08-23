@@ -1,13 +1,13 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../themes.dart';
 import 'Gradient_text.dart';
 import 'Gray_line.dart';
 
-class AnmitedWidget extends StatelessWidget {
-  const AnmitedWidget({
+class Oxygen extends StatelessWidget {
+
+  Oxygen({
     Key key,
     @required this.size,
     this.figure,
@@ -17,12 +17,12 @@ class AnmitedWidget extends StatelessWidget {
     this.figureW,
   }) : super(key: key);
 
-  final Size size;
-  final String figure;
-  final String advice;
-  final String condition;
-  final double figureH;
-  final double figureW;
+  final size;
+  final figure;
+  final advice;
+  final condition;
+  final figureH;
+  final figureW;
 
   @override
   Widget build(BuildContext context) {
@@ -32,41 +32,19 @@ class AnmitedWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 16,
+            height: 8,
           ),
           GradientText(
             text: 'Click the circle to measure again',
             font: AppFonts.profile,
           ),
           SizedBox(
-            height: 24,
+            height: 5,
           ),
           GrayLine(size: size),
           SizedBox(
-            height: 4,
+            height: 1,
           ),
-          Text('How you stack up!',
-              style: AppFonts.captiontext.copyWith(
-                color: Colors.black,
-              )),
-          SizedBox(
-            height: 8,
-          ),
-          Container(
-            height: figureH,
-            width: figureW,
-            child: SvgPicture.asset(
-              'assets/images/$figure.svg',
-            ),
-          ),
-          Text(
-            condition,
-            style: AppFonts.captiontext.copyWith(color: AppColors.cblack),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          GrayLine(size: size),
           SizedBox(
             height: 8,
           ),

@@ -19,6 +19,7 @@ class TitleBox extends StatelessWidget {
         child: Text(
           'What vitals do you want to measure ?',
           style: AppFonts.captiontext2.copyWith(
+            fontSize:size.aspectRatio*35,
             color: AppColors.cblack,
           ),
         ),

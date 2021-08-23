@@ -8,7 +8,8 @@ import 'dart:convert';
 import 'dart:typed_data';
 import '../../themes.dart';
 import '../Gradient_text.dart';
-import '../animated_Text.dart';
+import '../blood_pressure_widget.dart';
+import '../ecg_animated_widget.dart';
 import 'radial_pointer.dart';
 
 class RadialProgressPressure extends StatefulWidget {
@@ -251,7 +252,7 @@ class _RadialProgressPressureState extends State<RadialProgressPressure>
           painter: RadialPainter(progressDegrees),
         ),
         if (progressDegrees == 360)
-          AnmitedWidget(
+          BloodPressure(
             size: widget.size,
             figure: widget.figure,
             condition: widget.condition,

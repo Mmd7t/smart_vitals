@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import '../../themes.dart';
 import '../Gradient_text.dart';
-import '../animated_Text.dart';
+import '../ecg_animated_widget.dart';
 import 'radial_pointer.dart';
 
 class RadialProgressECG extends StatefulWidget {
@@ -18,22 +18,17 @@ class RadialProgressECG extends StatefulWidget {
     this.value,
     this.duration,
     this.size,
-    this.figure,
     this.advice,
     this.condition,
-    this.figureH,
-    this.figureW,
+
   }) : super(key: key);
 
   final double goalCompleted = 1;
   final String value;
   final int duration;
   final Size size;
-  final String figure;
   final String advice;
   final String condition;
-  final double figureH;
-  final double figureW;
 
   @override
   _RadialProgressECGState createState() => _RadialProgressECGState();
@@ -252,13 +247,11 @@ class _RadialProgressECGState extends State<RadialProgressECG>
           painter: RadialPainter(progressDegrees),
         ),
         if (progressDegrees == 360)
-          AnmitedWidget(
+          ECGAnmitedWidget(
             size: widget.size,
-            figure: widget.figure,
+            
             condition: widget.condition,
             advice: widget.advice,
-            figureH: widget.figureH,
-            figureW: widget.figureW,
           ),
       ],
     );

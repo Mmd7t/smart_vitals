@@ -10,7 +10,8 @@ import 'dart:convert';
 import 'dart:typed_data';
 import '../../themes.dart';
 import '../Gradient_text.dart';
-import '../animated_Text.dart';
+import '../ecg_animated_widget.dart';
+import '../oxygen_widget.dart';
 import 'radial_pointer.dart';
 
 class RadialProgressOxygen extends StatefulWidget {
@@ -253,7 +254,7 @@ class _RadialProgressOxygenState extends State<RadialProgressOxygen>
           painter: RadialPainter(progressDegrees),
         ),
         if (progressDegrees == 360)
-          AnmitedWidget(
+          Oxygen(
             size: widget.size,
             figure: widget.figure,
             condition: widget.condition,

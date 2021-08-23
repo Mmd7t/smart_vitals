@@ -40,13 +40,9 @@ class _ECGMainState extends State<ECGMain> {
               size: size,
               value: '37',
               duration: 4,
-              figure: 'temp_3',
-              figureH: size.width * 0.15,
-              figureW: size.width * 0.57,
               condition:
                   'Your temprature is normal', //change it with data from back end
-              advice:
-                  '''You’re doing great, If you keep this up 
+              advice: '''You’re doing great, If you keep this up 
 you’re goingto live long healthy life ...''', //change it with data from back end
             ),
           ],
